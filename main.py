@@ -20,7 +20,7 @@ def main():
         [1,4,2,1,4],[3,4,2,10],[3,10,1,7],[3,7,2,5],[1,3,3]
         ]
     map=LogicMap.LogicMap(verticalMap=vmap,horizontalMap=hmap)
-    LogicSlover.Slover(map)
+    LogicSlover.Solver(map)
     print('answer')
     map.Show()
 

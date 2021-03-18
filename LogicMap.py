@@ -1,5 +1,9 @@
 import copy
 
+#ロジックのマップ
+# / -> 不定     (-1)
+# ■ -> 黒塗り   ( 1)
+# □ -> 白塗り   ( 0)
 class LogicMap():
     def __init__(self,verticalMap=[],horizontalMap=[]) -> None:
         print('map formatting...')
@@ -22,17 +26,6 @@ class LogicMap():
         return self.verticalMap[num]
     def GetHorizontalMap(self,num):
         return self.horizontalMap[num]
-    def Show(self) -> None:
-        for i in range(self.vertical):
-            for j in range(self.horizontal):
-                val=self.matrix[i*self.vertical+j]
-                mark='/'
-                if val==1:
-                    mark='■'
-                elif val==0:
-                    mark='□'
-                print(mark,end='')
-            print()
     def SetDot(self,vertical,horizontal,val) -> None:
         self.matrix[vertical*self.vertical+horizontal]=val
     def GetDot(self,vertical,horizontal) -> int:
@@ -47,3 +40,14 @@ class LogicMap():
     def SetHorizontalLine(self,num,val) -> int:
         for i in range(len(val)):
             self.matrix[i+num*self.horizontal]=val[i]
+    def Show(self) -> None:
+        for i in range(self.vertical):
+            for j in range(self.horizontal):
+                val=self.matrix[i*self.vertical+j]
+                mark='/'
+                if val==1:
+                    mark='■'
+                elif val==0:
+                    mark='□'
+                print(mark,end='')
+            print()
