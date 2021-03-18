@@ -1,6 +1,6 @@
 import sys #command args
 import LogicMap
-import LogicSlover
+import LogicSolver
 
 def main():
     vmap=[
